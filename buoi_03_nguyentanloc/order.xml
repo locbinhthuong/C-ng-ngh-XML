@@ -1,0 +1,22 @@
+<orders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="order.xsd">
+	<order id="O001">
+		<customer>SV01</customer>
+		<products>
+			<product id="P01">
+				<name>Bút bi</name>
+			</product>
+			<product id="P02">
+				<name>Tập giấy</name>
+			</product>
+		</products>
+	</order>
+	<order id="O002">
+		<customer>SV02</customer>
+		<products>
+			<product id="P01">
+				<name>Thước kẻ</name>
+			</product>
+		</products>
+	</order>
+</orders>
+
