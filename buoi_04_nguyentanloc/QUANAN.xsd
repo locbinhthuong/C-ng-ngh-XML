@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:qa="http://example.com/quanan"
+	targetNamespace="http://example.com/quanan"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:simpleType name="Char10">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Varchar50">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PhoneVN">
+		<xs:restriction base="xs:string">
+			<xs:length value="10"/>
+			<xs:pattern value="0[0-9]{9}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Username">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="6"/>
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Password">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="10"/>
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="QUANAN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="NHANVIEN" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MANV" type="Char10"/>
+							<xs:element name="TENNV" type="Varchar50"/>
+							<xs:element name="SDT" type="PhoneVN"/>
+							<xs:element name="DIACHI" type="Varchar50"/>
+							<xs:element name="GIOITINH" type="xs:string"/>
+							<xs:element name="USERNAME" type="Username"/>
+							<xs:element name="PASSWORD" type="Password"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BAN" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="TENBAN" type="Char10"/>
+							<xs:element name="SOBAN" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="MON" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MAMON" type="Char10"/>
+							<xs:element name="TENMON" type="Char10"/>
+							<xs:element name="GIA" type="xs:float"/>
+							<xs:element name="HINHANH" type="Varchar50"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="HOADON" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SOHD" type="Char10"/>
+							<xs:element name="NGAYLAP" type="xs:date"/>
+							<xs:element name="TONGTIEN" type="xs:float"/>
+							<xs:element name="LAP_HD" type="Char10"/> 
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CTHD" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SOHOADON" type="Char10"/>
+							<xs:element name="MAMON" type="Char10"/>
+							<xs:element name="SOLUONG" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+
+			<xs:key name="NhanVienKey">
+				<xs:selector xpath="qa:NHANVIEN"/>
+				<xs:field xpath="qa:MANV"/>
+			</xs:key>
+			<xs:key name="BanKey">
+				<xs:selector xpath="qa:BAN"/>
+				<xs:field xpath="qa:SOBAN"/>
+			</xs:key>
+			<xs:key name="MonKey">
+				<xs:selector xpath="qa:MON"/>
+				<xs:field xpath="qa:MAMON"/>
+			</xs:key>
+			<xs:key name="HoaDonKey">
+				<xs:selector xpath="qa:HOADON"/>
+				<xs:field xpath="qa:SOHD"/>
+			</xs:key>
+
+			<xs:keyref name="HoaDonToNhanVien" refer="qa:NhanVienKey">
+				<xs:selector xpath="qa:HOADON"/>
+				<xs:field xpath="qa:LAP_HD"/>
+			</xs:keyref>
+			<xs:keyref name="CTHDToHoaDon" refer="qa:HoaDonKey">
+				<xs:selector xpath="qa:CTHD"/>
+				<xs:field xpath="qa:SOHOADON"/>
+			</xs:keyref>
+			<xs:keyref name="CTHDToMon" refer="qa:MonKey">
+				<xs:selector xpath="qa:CTHD"/>
+				<xs:field xpath="qa:MAMON"/>
+			</xs:keyref>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
+
+

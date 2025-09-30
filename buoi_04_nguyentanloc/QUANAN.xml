@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qa:QUANAN xmlns:qa="http://example.com/quanan">
+	<qa:NHANVIEN>
+		<qa:MANV>NV01</qa:MANV>
+		<qa:TENNV>Nguyen A</qa:TENNV>
+		<qa:SDT>0912345678</qa:SDT>
+		<qa:DIACHI>HCM</qa:DIACHI>
+		<qa:GIOITINH>Nam</qa:GIOITINH>
+		<qa:USERNAME>usernguyena</qa:USERNAME>
+		<qa:PASSWORD>matkhau0123</qa:PASSWORD>
+	</qa:NHANVIEN>
+	<qa:NHANVIEN>
+		<qa:MANV>NV02</qa:MANV>
+		<qa:TENNV>Tran B</qa:TENNV>
+		<qa:SDT>0909090909</qa:SDT>
+		<qa:DIACHI>HN</qa:DIACHI>
+		<qa:GIOITINH>Nu</qa:GIOITINH>
+		<qa:USERNAME>usertranb</qa:USERNAME>
+		<qa:PASSWORD>passwordabcd</qa:PASSWORD>
+	</qa:NHANVIEN>
+	<qa:NHANVIEN>
+		<qa:MANV>NV03</qa:MANV>
+		<qa:TENNV>Le C</qa:TENNV>
+		<qa:SDT>0812345678</qa:SDT>
+		<qa:DIACHI>DN</qa:DIACHI>
+		<qa:GIOITINH>Nam</qa:GIOITINH>
+		<qa:USERNAME>userlecxxx</qa:USERNAME>
+		<qa:PASSWORD>1234567890a</qa:PASSWORD>
+	</qa:NHANVIEN>
+	<qa:NHANVIEN>
+		<qa:MANV>NV04</qa:MANV>
+		<qa:TENNV>Pham D</qa:TENNV>
+		<qa:SDT>0707070707</qa:SDT>
+		<qa:DIACHI>CT</qa:DIACHI>
+		<qa:GIOITINH>Nu</qa:GIOITINH>
+		<qa:USERNAME>userphamd</qa:USERNAME>
+		<qa:PASSWORD>longpassword1</qa:PASSWORD>
+	</qa:NHANVIEN>
+	<qa:NHANVIEN>
+		<qa:MANV>NV05</qa:MANV>
+		<qa:TENNV>Do E</qa:TENNV>
+		<qa:SDT>0933333333</qa:SDT>
+		<qa:DIACHI>HUE</qa:DIACHI>
+		<qa:GIOITINH>Nam</qa:GIOITINH>
+		<qa:USERNAME>usereeeee</qa:USERNAME>
+		<qa:PASSWORD>abcdefghij</qa:PASSWORD>
+	</qa:NHANVIEN>
+
+	<qa:BAN>
+		<qa:TENBAN>B01</qa:TENBAN>
+		<qa:SOBAN>1</qa:SOBAN>
+	</qa:BAN>
+	<qa:BAN>
+		<qa:TENBAN>B02</qa:TENBAN>
+		<qa:SOBAN>2</qa:SOBAN>
+	</qa:BAN>
+
+	<qa:MON>
+		<qa:MAMON>M01</qa:MAMON>
+		<qa:TENMON>PHO</qa:TENMON>
+		<qa:GIA>45000</qa:GIA>
+		<qa:HINHANH>pho.jpg</qa:HINHANH>
+	</qa:MON>
+	<qa:MON>
+		<qa:MAMON>M02</qa:MAMON>
+		<qa:TENMON>BUN</qa:TENMON>
+		<qa:GIA>40000</qa:GIA>
+		<qa:HINHANH>bun.jpg</qa:HINHANH>
+	</qa:MON>
+
+	<qa:HOADON>
+		<qa:SOHD>HD01</qa:SOHD>
+		<qa:NGAYLAP>2025-09-30</qa:NGAYLAP>
+		<qa:TONGTIEN>85000</qa:TONGTIEN>
+		<qa:LAP_HD>NV01</qa:LAP_HD>
+	</qa:HOADON>
+	<qa:HOADON>
+		<qa:SOHD>HD02</qa:SOHD>
+		<qa:NGAYLAP>2025-09-30</qa:NGAYLAP>
+		<qa:TONGTIEN>40000</qa:TONGTIEN>
+		<qa:LAP_HD>NV02</qa:LAP_HD>
+	</qa:HOADON>
+
+	<qa:CTHD>
+		<qa:SOHOADON>HD01</qa:SOHOADON>
+		<qa:MAMON>M01</qa:MAMON>
+		<qa:SOLUONG>1</qa:SOLUONG>
+	</qa:CTHD>
+	<qa:CTHD>
+		<qa:SOHOADON>HD01</qa:SOHOADON>
+		<qa:MAMON>M02</qa:MAMON>
+		<qa:SOLUONG>1</qa:SOLUONG>
+	</qa:CTHD>
+	<qa:CTHD>
+		<qa:SOHOADON>HD02</qa:SOHOADON>
+		<qa:MAMON>M02</qa:MAMON>
+		<qa:SOLUONG>1</qa:SOLUONG>
+	</qa:CTHD>
+
+</qa:QUANAN>
+
+

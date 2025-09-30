@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:simpleType name="Code10">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+			<xs:pattern value="[A-Z0-9]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Name50">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PhoneVN">
+		<xs:restriction base="xs:string">
+			<xs:length value="10"/>
+			<xs:pattern value="0[0-9]{9}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DepartmentName">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+			<xs:pattern value="[a-z]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="DSSV">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="KHOA" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MA" type="Code10"/>
+							<xs:element name="TEN" type="DepartmentName"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LOP" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MA" type="Code10"/>
+							<xs:element name="TEN" type="Name50"/>
+							<xs:element name="MAKHOA" type="Code10"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="SINHVIEN" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MSSV" type="Code10"/>
+							<xs:element name="HOTEN" type="Name50"/>
+							<xs:element name="EMAIL" type="Name50"/>
+							<xs:element name="DIACHI" type="xs:string"/>
+							<xs:element name="SDT" type="PhoneVN"/>
+							<xs:element name="MALOP" type="Code10"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+
+			<xs:key name="KhoaKey">
+				<xs:selector xpath="KHOA"/>
+				<xs:field xpath="MA"/>
+			</xs:key>
+			<xs:key name="LopKey">
+				<xs:selector xpath="LOP"/>
+				<xs:field xpath="MA"/>
+			</xs:key>
+			<xs:key name="SinhVienKey">
+				<xs:selector xpath="SINHVIEN"/>
+				<xs:field xpath="MSSV"/>
+			</xs:key>
+
+			<xs:keyref name="LopToKhoa" refer="KhoaKey">
+				<xs:selector xpath="LOP"/>
+				<xs:field xpath="MAKHOA"/>
+			</xs:keyref>
+			<xs:keyref name="SinhVienToLop" refer="LopKey">
+				<xs:selector xpath="SINHVIEN"/>
+				<xs:field xpath="MALOP"/>
+			</xs:keyref>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
+
+
