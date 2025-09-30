@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DSSV>
+	<KHOA>
+		<MA>K01</MA>
+		<TEN>congnghe</TEN>
+	</KHOA>
+	<KHOA>
+		<MA>K02</MA>
+		<TEN>ketoan</TEN>
+	</KHOA>
+	<KHOA>
+		<MA>K03</MA>
+		<TEN>ngonngu</TEN>
+	</KHOA>
+
+	<LOP>
+		<MA>L01</MA>
+		<TEN>CN01</TEN>
+		<MAKHOA>K01</MAKHOA>
+	</LOP>
+	<LOP>
+		<MA>L02</MA>
+		<TEN>KT01</TEN>
+		<MAKHOA>K02</MAKHOA>
+	</LOP>
+	<LOP>
+		<MA>L03</MA>
+		<TEN>NN01</TEN>
+		<MAKHOA>K03</MAKHOA>
+	</LOP>
+
+	<SINHVIEN>
+		<MSSV>S001</MSSV>
+		<HOTEN>Nguyen Van A</HOTEN>
+		<EMAIL>a@example.com</EMAIL>
+		<DIACHI>HCM</DIACHI>
+		<SDT>0123456789</SDT>
+		<MALOP>L01</MALOP>
+	</SINHVIEN>
+	<SINHVIEN>
+		<MSSV>S002</MSSV>
+		<HOTEN>Tran Thi B</HOTEN>
+		<EMAIL>b@example.com</EMAIL>
+		<DIACHI>HN</DIACHI>
+		<SDT>0987654321</SDT>
+		<MALOP>L02</MALOP>
+	</SINHVIEN>
+	<SINHVIEN>
+		<MSSV>S003</MSSV>
+		<HOTEN>Le Van C</HOTEN>
+		<EMAIL>c@example.com</EMAIL>
+		<DIACHI>DN</DIACHI>
+		<SDT>0912345678</SDT>
+		<MALOP>L03</MALOP>
+	</SINHVIEN>
+	<SINHVIEN>
+		<MSSV>S004</MSSV>
+		<HOTEN>Pham Thi D</HOTEN>
+		<EMAIL>d@example.com</EMAIL>
+		<DIACHI>CT</DIACHI>
+		<SDT>0909090909</SDT>
+		<MALOP>L01</MALOP>
+	</SINHVIEN>
+	<SINHVIEN>
+		<MSSV>S005</MSSV>
+		<HOTEN>Do Van E</HOTEN>
+		<EMAIL>e@example.com</EMAIL>
+		<DIACHI>HUE</DIACHI>
+		<SDT>0811111111</SDT>
+		<MALOP>L02</MALOP>
+	</SINHVIEN>
+</DSSV>
+
+
